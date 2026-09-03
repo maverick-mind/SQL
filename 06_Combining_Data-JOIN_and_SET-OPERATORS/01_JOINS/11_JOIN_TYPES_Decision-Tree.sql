@@ -1,0 +1,12 @@
+-- How to choose between JOIN types ? DECSION TREE 
+
+-- 1. only matching data required --> INNER JOIN 
+-- 2. ALL ROWS (2 CASES): ONE SIDE(MASTER TABLE) is more important than others
+				   	      --> LEFT JOINN or RIGHT JOIN 
+--                      : BOTH SIDES(BOTH IMPORTANT) --> FULL JOIN 
+-- 3. Only Unmatching : CASE 1(ONE SIDE) : if unmatching data from one table is important 
+-- so , we want to see unmatching data from one table and use other table only for CHECK
+--                      (i.e. ONE SIDE(MASTER TABLE)) --> USE LEFT ANTI JOIN
+--                                                    --> or RIGHT ANTI JOIN 
+--						CASE 2(BOTH SIDE) : if both of the tables are important , then
+--                                          we will use FULL-ANTI JOIN
