@@ -54,3 +54,38 @@ LEFT JOIN Sales.Customers AS cst ON cst.CustomerID = ord.CustomerID
 LEFT JOIN Sales.Products AS prd ON ord.ProductID = prd.ProductID 
 LEFT JOIN Sales.Employees AS emp ON ord.SalesPersonID = emp.EmployeeID
 
+
+
+SELECT 
+    TABLE_SCHEMA,
+    TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE = 'BASE TABLE'
+ORDER BY TABLE_SCHEMA, TABLE_NAME;
+
+
+
+SELECT * 
+FROM SALES.orders o INNER JOIN SALES.customers c
+ON o.CustomerID = c.CustomerID
+INNER JOIN SALES.Products p ON  o.ProductID = p.ProductID
+INNER JOIN SALES.Employees as e ON o.SalesPersonID = EmployeeID
+
+
+
+SELECT o.OrderID , o.Sales ,
+c.FirstName CustomerFirstName, c.LastName CustomerLastName, 
+p.Product ProductName,
+p.price ,
+e.FirstName EmployeeFirstName , e.LastName EmployeeLastName
+ FROM SALES.orders o LEFT JOIN SALES.customers c
+ON o.CustomerID = c.CustomerID
+LEFT JOIN SALES.Products p ON  o.ProductID = p.ProductID
+LEFT JOIN SALES.Employees as e ON o.SalesPersonID = EmployeeID
+
+
+SELECT * FROM Sales.orders
+-- SELECT * FROM SALES.Customers
+-- SELECT * FROM SALES.Products
+SELECT * FROM SALES.Employees
+
